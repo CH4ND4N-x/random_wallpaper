@@ -1,0 +1,30 @@
+#! /usr/bin/python
+import os
+import requests
+
+BASEURL = 'https://source.unsplash.com/random'
+
+#deleting older wallpaper
+def delete_old_wall():
+    for file in os.listdir():
+        if file == "image_now.png":
+            os.remove(file)
+        elif file == "image_next.png":
+            os.rename(r'{}/image_next.png'.format(os.getcwd()),r'{}/image_now.png'.format(os.getcwd()))
+
+#downloading new wallpaper
+def download_wall():
+    urlreq = requests.get(BASEURL)
+    with open("image_next.png" , "wb") as file:
+        file.write(urlreq.content)
+
+#setting wallpaper
+def set_wall():
+    for image in os.listdir():
+        if image == "image_now.png":
+            os.system('feh --bg-fill {}'.format(image))
+
+if __name__ == "__main__":
+    delete_old_wall()
+    set_wall()
+    download_wall()
