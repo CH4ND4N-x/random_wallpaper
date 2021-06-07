@@ -21,7 +21,11 @@ BASEURL = 'https://source.unsplash.com/random/1920x1080'
 ```
 
 ### Running
-
+Clone the repo and cd into the directory
+```bash
+$ git clone https://github.com/CH4ND4N-x/random_wallpaper.git
+$ cd random_wallpaper
+```
 Give execute permission
 ```bash
 $ chmod +x random_wallpaper
@@ -29,4 +33,14 @@ $ chmod +x random_wallpaper
 Ececute
 ```bash
 $ ./random_wallpaper
+```
+To retain the wallpaper after reboot, execute ~/.fehbg in either config or autostart file of your window manager
+
+- for i3wm add this to config
+```bash
+$ exec_always ~/.fehbg
+```
+- for open box add this to autostart file 
+```bash
+$ ~/.fehbg &
 ```
