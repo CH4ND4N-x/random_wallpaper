@@ -12,6 +12,14 @@ Install following programs on your system.
 - **`python >= 3 `** : It's a python script
 - **`feh`** : to set wallpaper
 
+### Settings image resolution
+
+change the BASEURL in random_wallpaper file by adding the required resolution in url 
+- Example Setting resolution to 1920x1080
+```bash
+BASEURL = 'https://source.unsplash.com/random/1920x1080'
+```
+
 ### Running
 
 Give execute permission
